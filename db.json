@@ -1,9 +1,502 @@
 {
-  "posts": [
-    { "id": 1, "title": "json-server", "author": "typicode" }
+  "users": [
+    {
+      "id": 1,
+      "role": "owner",
+      "name": "陳小明",
+      "email": "ming@example.com",
+      "password": "hashed_password_ming",
+      "googleId": null,
+      "phone": "0912345678",
+      "address": {
+        "city": "台北市",
+        "district": "大安區",
+        "street": "復興南路一段100號"
+      },
+      "profilePictureUrl": "https://res.cloudinary.com/dmumnom3r/image/upload/v1747969778/sitter-6_cxhzcw.png",
+      "registrationDate": "2024-05-01T10:00:00Z"
+    },
+    {
+      "id": 2,
+      "role": "sitter",
+      "name": "李大華",
+      "email": "hua@example.com",
+      "password": "hashed_password_hua",
+      "googleId": "google_id_hua_123",
+      "phone": "0987654321",
+      "profilePictureUrl": "https://res.cloudinary.com/dmumnom3r/image/upload/v1747969778/sitter-7_nru2tb.png",
+      "bio": "我是一個有五年經驗的寵物保姆，非常有愛心和耐心，專長照顧貓咪和狗狗。",
+      "rating": 4.5,
+      "reviewCount": 15,
+      "totalBookingsCompleted": 20,
+      "address": {
+        "city": "台北市",
+        "district": "中正區"
+      },
+      "serviceArea": ["台北市 中正區", "台北市 大安區"],
+      "experienceYears": 5,
+      "availability": {
+        "monday": [{ "start": "09:00", "end": "18:00" }],
+        "tuesday": [{ "start": "09:00", "end": "18:00" }],
+        "wednesday": [],
+        "thursday": [
+          { "start": "09:00", "end": "12:00" },
+          { "start": "14:00", "end": "19:00" }
+        ],
+        "friday": [{ "start": "09:00", "end": "18:00" }],
+        "saturday": [{ "start": "10:00", "end": "16:00" }],
+        "sunday": []
+      },
+      "acceptedPetTypes": ["狗", "貓"],
+      "servicesOffered": [
+        {
+          "serviceId": "sitter2_daycare",
+          "name": "日間托養",
+          "description": "提供貓狗日間的專業照顧。",
+          "price": 600,
+          "unit": "日"
+        },
+        {
+          "serviceId": "sitter2_dogwalking",
+          "name": "遛狗散步",
+          "description": "帶狗狗到附近公園散步。",
+          "price": 350,
+          "unit": "次"
+        },
+        {
+          "serviceId": "sitter2_feeding",
+          "name": "上門餵食",
+          "description": "至飼主家中為貓狗提供餵食服務。",
+          "price": 400,
+          "unit": "次"
+        }
+      ],
+      "bankAccountDetails": {
+        "bankName": "玉山銀行",
+        "accountNumber": "1234567890123"
+      },
+      "registrationDate": "2024-04-15T14:30:00Z"
+    },
+    {
+      "id": 3,
+      "role": "sitter",
+      "name": "王小芳",
+      "email": "fang@example.com",
+      "password": "hashed_password_fang",
+      "googleId": null,
+      "phone": "0922333444",
+      "profilePictureUrl": "https://res.cloudinary.com/dmumnom3r/image/upload/v1747969779/sitter-8_axnln6.png",
+      "bio": "經驗豐富的貓咪保姆，提供溫馨的寄養環境。",
+      "rating": 4.7,
+      "reviewCount": 10,
+      "totalBookingsCompleted": 12,
+      "address": {
+        "city": "台北市",
+        "district": "信義區"
+      },
+      "serviceArea": ["台北市 信義區"],
+      "experienceYears": 3,
+      "availability": { "monday": [{ "start": "10:00", "end": "17:00" }] },
+      "acceptedPetTypes": ["貓"],
+      "servicesOffered": [
+        {
+          "serviceId": "sitter3_boarding_cat",
+          "name": "外宿寄養",
+          "description": "提供貓咪舒適安全的過夜寄養環境。",
+          "price": 700,
+          "unit": "晚"
+        },
+        {
+          "serviceId": "sitter3_feeding_cat",
+          "name": "上門餵食",
+          "description": "專為貓咪設計的上門餵食服務。",
+          "price": 450,
+          "unit": "次"
+        }
+      ],
+      "bankAccountDetails": {
+        "bankName": "國泰世華",
+        "accountNumber": "0987654321098"
+      },
+      "registrationDate": "2024-03-10T09:00:00Z"
+    },
+    {
+      "id": 4,
+      "role": "sitter",
+      "name": "新莊狗狗日托",
+      "email": "sitter4@example.com",
+      "password": "hashed_password_sitter",
+      "googleId": null,
+      "phone": "0900000004",
+      "profilePictureUrl": "https://res.cloudinary.com/dmumnom3r/image/upload/v1747969776/sitter-1_fm7tcb.png",
+      "bio": "目前到府服務經驗4年多，自己本身也有養狗養貓，愛動物的我，有空也會去外面餵浪...",
+      "rating": 4.2,
+      "reviewCount": 4,
+      "totalBookingsCompleted": 6,
+      "address": { "city": "新北市", "district": "新莊區" },
+      "serviceArea": ["新北市 新莊區"],
+      "experienceYears": 4,
+      "availability": {},
+      "acceptedPetTypes": ["狗", "貓"],
+      "servicesOffered": [
+        {
+          "serviceId": "sitter4_default",
+          "name": "日間托養",
+          "description": "專業狗狗日間托養服務。",
+          "price": 550,
+          "unit": "日"
+        }
+      ],
+      "bankAccountDetails": {},
+      "registrationDate": "2024-01-01T12:00:00Z"
+    },
+    {
+      "id": 5,
+      "role": "sitter",
+      "name": "貓狗到府照顧",
+      "email": "sitter5@example.com",
+      "password": "hashed_password_sitter",
+      "googleId": null,
+      "phone": "0900000005",
+      "profilePictureUrl": "https://res.cloudinary.com/dmumnom3r/image/upload/v1747969777/sitter-2_hsztqm.png",
+      "bio": "很愛狗的我把狗當孩子疼，家有大空間在家工作，狗狗寄宿照護最適合我這個人來擔任啦！...",
+      "rating": 4.6,
+      "reviewCount": 7,
+      "totalBookingsCompleted": 8,
+      "address": { "city": "新北市", "district": "永和區" },
+      "serviceArea": ["新北市 永和區"],
+      "experienceYears": 3,
+      "availability": {},
+      "acceptedPetTypes": ["狗", "貓"],
+      "servicesOffered": [
+        {
+          "serviceId": "sitter5_default",
+          "name": "上門餵食",
+          "description": "專業貓狗到府照顧。",
+          "price": 300,
+          "unit": "次"
+        }
+      ],
+      "bankAccountDetails": {},
+      "registrationDate": "2024-01-02T12:00:00Z"
+    },
+    {
+      "id": 6,
+      "role": "sitter",
+      "name": "毛媽寵物度假村",
+      "email": "sitter6@example.com",
+      "password": "hashed_password_sitter",
+      "googleId": null,
+      "phone": "0900000006",
+      "profilePictureUrl": "https://res.cloudinary.com/dmumnom3r/image/upload/v1747969776/sitter-3_bqeyns.png",
+      "bio": "從小我就很喜歡小動物，也養過很多種動物，如狗、貓、鳥、老鼠、兔子...，對於寵物都非常...",
+      "rating": 4.8,
+      "reviewCount": 2,
+      "totalBookingsCompleted": 6,
+      "address": { "city": "台北市", "district": "萬華區" },
+      "serviceArea": ["台北市 萬華區"],
+      "experienceYears": 5,
+      "availability": {},
+      "acceptedPetTypes": ["狗", "貓", "鳥", "兔子"],
+      "servicesOffered": [
+        {
+          "serviceId": "sitter6_default",
+          "name": "外宿寄養",
+          "description": "提供多種寵物舒適的度假寄養環境。",
+          "price": 600,
+          "unit": "晚"
+        }
+      ],
+      "bankAccountDetails": {},
+      "registrationDate": "2024-01-03T12:00:00Z"
+    },
+    {
+      "id": 7,
+      "role": "sitter",
+      "name": "小捷貓狗寄宿",
+      "email": "sitter7@example.com",
+      "password": "hashed_password_sitter",
+      "googleId": null,
+      "phone": "0900000007",
+      "profilePictureUrl": "https://res.cloudinary.com/dmumnom3r/image/upload/v1747969777/sitter-4_jcxxoj.png",
+      "bio": "來自獸醫師家庭，從小接觸各種動物，非常愛毛小孩，有老寵照顧經驗，家裡寵物都活超過一...",
+      "rating": 4.7,
+      "reviewCount": 2,
+      "totalBookingsCompleted": 3,
+      "address": { "city": "台北市", "district": "信義區" },
+      "serviceArea": ["台北市 信義區"],
+      "experienceYears": 10,
+      "availability": {},
+      "acceptedPetTypes": ["狗", "貓"],
+      "servicesOffered": [
+        {
+          "serviceId": "sitter7_default",
+          "name": "外宿寄養",
+          "description": "具獸醫背景知識的貓狗寄宿服務。",
+          "price": 350,
+          "unit": "晚"
+        }
+      ],
+      "bankAccountDetails": {},
+      "registrationDate": "2024-01-04T12:00:00Z"
+    },
+    {
+      "id": 8,
+      "role": "sitter",
+      "name": "莉莎的家",
+      "email": "sitter8@example.com",
+      "password": "hashed_password_sitter",
+      "googleId": null,
+      "phone": "0900000008",
+      "profilePictureUrl": "https://res.cloudinary.com/dmumnom3r/image/upload/v1748397047/%E8%8E%89%E8%8E%8E1_pg742z.jpg",
+      "pictureUrls": [
+        "https://res.cloudinary.com/dmumnom3r/image/upload/v1748397051/%E8%8E%89%E8%8E%8E2_urzdag.jpg",
+        "https://res.cloudinary.com/dmumnom3r/image/upload/v1748397045/%E8%8E%89%E8%8E%8E3_vnojff.png",
+        "https://res.cloudinary.com/dmumnom3r/image/upload/v1748397046/%E8%8E%89%E8%8E%8E4_qlpwrx.jpg"
+      ],
+      "bio": "大家好，莉莎的家是有六年經驗的專業寵物保母。我從小就熱愛動物，並照顧過超過50隻狗狗和貓咪。參加過多次寵物急救訓練，熟悉動物行為學，能應對各種突發情況。我相信每一隻寵物都有獨特需求，所以我會盡心提供最適合牠們的照顧，讓它們感到安心。",
+      "rating": 4.6,
+      "reviewCount": 9,
+      "totalBookingsCompleted": 12,
+      "address": { "city": "台北市", "district": "中山區" },
+      "serviceArea": ["台北市 中山區"],
+      "experienceYears": 16,
+      "availability": {
+        "monday": [{ "start": "09:00", "end": "18:00" }],
+        "tuesday": [{ "start": "09:00", "end": "18:00" }],
+        "wednesday": [{ "start": "09:00", "end": "18:00" }],
+        "thursday": [
+          { "start": "09:00", "end": "12:00" },
+          { "start": "14:00", "end": "19:00" }
+        ],
+        "friday": [{ "start": "09:00", "end": "18:00" }],
+        "saturday": [{ "start": "10:00", "end": "16:00" }],
+        "sunday": [{ "start": "09:00", "end": "18:00" }]
+      },
+      "acceptedPetTypes": ["狗"],
+      "servicesOffered": [
+        {
+          "serviceId": "sitter8_dogwalking",
+          "name": "遛狗散步",
+          "description": "帶狗狗到附近公園散步。",
+          "price": 550,
+          "unit": "次"
+        },
+        {
+          "serviceId": "sitter8_feeding",
+          "name": "上門餵食",
+          "description": "至飼主家中為貓狗提供餵食服務。",
+          "price": 300,
+          "unit": "次"
+        },
+        {
+          "serviceId": "sitter8_default",
+          "name": "日間托養",
+          "description": "經驗豐富的狗狗日間照顧，提供鮮食選項。",
+          "price": 1000,
+          "unit": "日"
+        }
+      ],
+      "bankAccountDetails": {},
+      "registrationDate": "2024-01-05T12:00:00Z"
+    },
+    {
+      "id": 9,
+      "role": "sitter",
+      "name": "亮亮寵物保母",
+      "email": "sitter9@example.com",
+      "password": "hashed_password_sitter",
+      "googleId": null,
+      "phone": "0900000009",
+      "profilePictureUrl": "https://res.cloudinary.com/dmumnom3r/image/upload/v1747969778/sitter-6_cxhzcw.png",
+      "bio": "我愛狗，欣賞狗狗優雅的氣質及獨有的個性。狗兒對於環境變化非常敏感，尤其主人不在身時...",
+      "rating": 4.5,
+      "reviewCount": 13,
+      "totalBookingsCompleted": 18,
+      "address": { "city": "新北市", "district": "土城區" },
+      "serviceArea": ["新北市 土城區"],
+      "experienceYears": 5,
+      "availability": {},
+      "acceptedPetTypes": ["狗"],
+      "servicesOffered": [
+        {
+          "serviceId": "sitter9_default",
+          "name": "遛狗散步",
+          "description": "專業遛狗服務，關注狗狗身心狀況。",
+          "price": 450,
+          "unit": "次"
+        }
+      ],
+      "bankAccountDetails": {},
+      "registrationDate": "2024-01-06T12:00:00Z"
+    },
+    {
+      "id": 10,
+      "role": "sitter",
+      "name": "雙北寵物安親",
+      "email": "sitter10@example.com",
+      "password": "hashed_password_sitter",
+      "googleId": null,
+      "phone": "0900000010",
+      "profilePictureUrl": "https://res.cloudinary.com/dmumnom3r/image/upload/v1747969778/sitter-7_nru2tb.png",
+      "bio": "從小家人養狗狗和魚開啟了我喜歡寵物的人生，因為喜歡的太多了無法全養所以就藉由幫大家照...",
+      "rating": 4.0,
+      "reviewCount": 4,
+      "totalBookingsCompleted": 2,
+      "address": { "city": "台北市", "district": "文山區" },
+      "serviceArea": ["台北市 文山區", "新北市"],
+      "experienceYears": 3,
+      "availability": {},
+      "acceptedPetTypes": ["狗", "貓"],
+      "servicesOffered": [
+        {
+          "serviceId": "sitter10_default",
+          "name": "日間托養",
+          "description": "雙北地區寵物安親服務。",
+          "price": 250,
+          "unit": "日"
+        }
+      ],
+      "bankAccountDetails": {},
+      "registrationDate": "2024-01-07T12:00:00Z"
+    },
+    {
+      "id": 11,
+      "role": "sitter",
+      "name": "好生活貓咪保母",
+      "email": "sitter11@example.com",
+      "password": "hashed_password_sitter",
+      "googleId": null,
+      "phone": "0900000011",
+      "profilePictureUrl": "https://res.cloudinary.com/dmumnom3r/image/upload/v1747969779/sitter-8_axnln6.png",
+      "bio": "純飼料餵食, 乾淨空間, 全年無休 含電梯含冷氣費用，且鋪防滑溫暖木紋磁磚地板，友善老或胖狗...",
+      "rating": 4.1,
+      "reviewCount": 4,
+      "totalBookingsCompleted": 4,
+      "address": { "city": "新北市", "district": "新莊區" },
+      "serviceArea": ["新北市 新莊區"],
+      "experienceYears": 2,
+      "availability": {},
+      "acceptedPetTypes": ["貓", "狗"],
+      "servicesOffered": [
+        {
+          "serviceId": "sitter11_default",
+          "name": "外宿寄養",
+          "description": "提供貓咪及友善狗狗的寄養環境。",
+          "price": 400,
+          "unit": "晚"
+        }
+      ],
+      "bankAccountDetails": {},
+      "registrationDate": "2024-01-08T12:00:00Z"
+    }
   ],
-  "comments": [
-    { "id": 1, "body": "some comment", "postId": 1 }
+  "pets": [
+    {
+      "id": 1,
+      "userId": 1,
+      "name": "咪咪",
+      "type": "貓",
+      "breed": "米克斯",
+      "age": 3,
+      "size": "中型",
+      "specialNeeds": "對某些飼料過敏，需要特定品牌。",
+      "photoUrl": "https://example.com/mimi.jpg"
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "name": "旺財",
+      "type": "狗",
+      "breed": "柴犬",
+      "age": 5,
+      "size": "中型",
+      "specialNeeds": "關節不太好，不宜劇烈運動。",
+      "photoUrl": "https://example.com/wangcai.jpg"
+    }
   ],
-  "profile": { "name": "typicode" }
+  "bookings": [
+    {
+      "id": 1,
+      "ownerId": 1,
+      "sitterId": 2,
+      "petIds": [1],
+      "serviceRequested": {
+        "name": "上門餵食",
+        "priceAtBooking": 400,
+        "unit": "次"
+      },
+      "serviceDateTimeStart": "2025-06-10T09:00:00Z",
+      "serviceDateTimeEnd": "2025-06-10T10:00:00Z",
+      "location": {
+        "city": "台北市",
+        "district": "大安區",
+        "street": "復興南路一段100號"
+      },
+      "specialInstructions": "咪咪的飼料在廚房櫃子裡，一天兩餐。",
+      "totalPrice": 400,
+      "status": "confirmed",
+      "paymentStatus": "paid",
+      "creationDate": "2025-05-10T11:00:00Z",
+      "confirmationDate": "2025-05-11T09:00:00Z"
+    },
+    {
+      "id": 2,
+      "ownerId": 1,
+      "sitterId": 3,
+      "petIds": [1],
+      "serviceRequested": {
+        "name": "外宿寄養",
+        "priceAtBooking": 700,
+        "unit": "晚"
+      },
+      "serviceDateTimeStart": "2025-07-01T18:00:00Z",
+      "serviceDateTimeEnd": "2025-07-05T10:00:00Z",
+      "location": {
+        "notes": "飼主將於7/1傍晚送達貓咪至保姆家。"
+      },
+      "specialInstructions": "咪咪喜歡特定品牌的貓砂，已隨行準備。",
+      "totalPrice": 2800,
+      "status": "pending_confirmation",
+      "paymentStatus": "unpaid",
+      "creationDate": "2025-06-15T14:00:00Z",
+      "confirmationDate": null
+    }
+  ],
+  "reviews": [
+    {
+      "id": 1,
+      "bookingId": 1,
+      "sitterId": 2,
+      "ownerId": 1,
+      "rating": 5,
+      "comment": "李保姆非常細心，咪咪看起來很開心！照片回報也很即時。",
+      "reviewDate": "2025-06-11T10:00:00Z"
+    }
+  ],
+  "faqs": [
+    {
+      "id": 1,
+      "question": "如何預約寵物保姆服務？",
+      "answer": "您可以在我們平台上搜尋符合需求的保姆，然後透過保姆的個人頁面進行預約。",
+      "category": "預約流程"
+    },
+    {
+      "id": 2,
+      "question": "付款方式有哪些？",
+      "answer": "目前平台支援線上信用卡支付。",
+      "category": "付款問題"
+    }
+  ],
+  "contactMessages": [
+    {
+      "id": 1,
+      "name": "王小姐",
+      "email": "wang@example.com",
+      "subject": "關於服務地區的疑問",
+      "message": "請問未來會開放新北市的服務嗎？",
+      "submissionDate": "2025-05-12T15:00:00Z",
+      "status": "new"
+    }
+  ]
 }
