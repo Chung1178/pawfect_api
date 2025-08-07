@@ -32,11 +32,24 @@ server.use(middlewares);
 server.get('/sitters', (req, res) => {
   try {
     const db = router.db;
-    const sitters = db.get('users').filter({ role: 'sitter' }).value();
+    // 1. 從請求物件(req)的 query 屬性中，讀取查詢參數
+    const city = req.query['address.city']; // Express 會自動解析 URL query string
+
+    // 2. 建立一個基本的篩選條件物件
+    const filterCriteria = { role: 'sitter' };
+
+    // 3. 如果 URL 中真的有 address.city 參數，就把它加到篩選條件中
+    //    Lodash 支援深度篩選！
+    if (city) {
+      filterCriteria.address = { city: city };
+    }
+
+    // 4. 將組合好的篩選條件傳給 filter 函式
+    const sitters = db.get('users').filter(filterCriteria).value();
     
     // 移除敏感資料
     const publicSitters = sitters.map(sitter => {
-      const { password, googleId, phone, address, bankAccountDetails, ...publicData } = sitter;
+      const { password, googleId, phone, bankAccountDetails, ...publicData } = sitter;
       return publicData;
     });
     
